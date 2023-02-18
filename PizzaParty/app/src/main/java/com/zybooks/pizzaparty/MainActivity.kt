@@ -11,7 +11,7 @@ import kotlin.math.ceil
 const val SLICES_PER_PIZZA = 8
 
 /**
- * 
+ * Basically the main function to call all the others 
  */
 class MainActivity : AppCompatActivity() {
 
@@ -26,16 +26,23 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
-
+    /**
+    *Function to calulate the number of pizzas needed for the number of people that comes from the input
+    */
     fun calculateClick(view: View) {
 
-        // Get the text that was typed into the EditText
+        /**
+        *Get the text that was typed into the EditText
+        */
         val numAttendStr = numAttendEditText.text.toString()
 
-        // Convert the text into an integer
+        /**
+        *Convert the text into an integer
+        */
         val numAttend = numAttendStr.toInt()
-
-        // Determine how many slices on average each person will eat
+        /**
+        * Determine how many slices on average each person will eat
+        */
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
             R.id.light_radio_button -> 2
             R.id.medium_radio_button -> 3
